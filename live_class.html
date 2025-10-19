@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="card" style="width:90%; max-width:1100px; padding:18px;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+            <h2>📚 {{ title }}</h2>
+            <p style="margin-top:6px;">{{ description }}</p>
+        </div>
+        <div>
+            <a class="small-btn" href="{{ url_for('profile') }}">Back to Profile</a>
+            <a class="small-btn" href="{{ url_for('home') }}">Home</a>
+        </div>
+    </div>
+
+    <div id="jitsi-container" style="margin-top:14px; height:640px; border-radius:12px; overflow:hidden; background:#000;">
+        <!-- Jitsi iframe -->
+        <iframe id="jitsi-frame"
+            allow="camera; microphone; fullscreen; display-capture"
+            src="https://{{ jitsi_domain }}/{{ room }}#userInfo.displayName={{ session.get('user_name','Guest')|urlencode }}"
+            style="width:100%; height:100%; border:0;">
+        </iframe>
+    </div>
+
+    <p style="margin-top:10px;">
+        If the embedded conference doesn't load, <a href="https://{{ jitsi_domain }}/{{ room }}" target="_blank">open the meeting in a new tab</a>.
+    </p>
+</div>
+{% endblock %}

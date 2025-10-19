@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SwiftWings Live</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(135deg, #a0e7e5, #b4f8c8, #fce1e4);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #444;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0077b6;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .notebook {
+            background: #fff;
+            border: 3px dashed #a0e7e5;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 70%;
+            margin: 30px auto;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📘 EDUCONNECT</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+            <a href="/create_class">Create Live Class</a>
+            <a href="/video_conference">Video Conference</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="notebook">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

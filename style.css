@@ -1,0 +1,122 @@
+/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    background: linear-gradient(120deg, #b3e5fc, #f8bbd0, #c8e6c9);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    color: #333;
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px dashed #a1c4fd;
+}
+
+.nav-left .logo {
+    color: #1976d2;
+    font-size: 28px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #1976d2;
+    text-decoration: underline;
+}
+
+/* ===== Card Containers ===== */
+.card {
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin: 60px auto;
+    max-width: 500px;
+    position: relative;
+    border: 3px dashed #bbdefb;
+}
+
+/* Add notebook-like horizontal lines */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    background-image: repeating-linear-gradient(white 0px, white 24px, #e1f5fe 25px);
+    z-index: -1;
+    border-radius: 25px;
+}
+
+/* ===== Inputs & Buttons ===== */
+input, textarea {
+    width: 80%;
+    padding: 12px;
+    margin: 10px;
+    border: 2px solid #b3e5fc;
+    border-radius: 15px;
+    outline: none;
+    font-family: 'Fredoka One', cursive;
+}
+
+button {
+    background: #80deea;
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Fredoka One', cursive;
+}
+
+button:hover {
+    background: #4dd0e1;
+    transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 60px;
+    padding: 10px;
+    background: rgba(255,255,255,0.7);
+    border-top: 2px dashed #a1c4fd;
+}
+
+/* ===== Flash Messages ===== */
+.alert {
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+}
+
+.alert.success { background: #81c784; }
+.alert.danger { background: #e57373; }
+.alert.warning { background: #ffb74d; }
+.alert.info { background: #64b5f6; }

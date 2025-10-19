@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Create Live Class{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>🎥 Create a Live Class</h2>
+    <form method="POST">
+        <input type="text" name="title" placeholder="📘 Class Title" required><br>
+        <textarea name="description" placeholder="📝 Class Description" rows="4" required></textarea><br>
+        <button type="submit">Generate Class Link</button>
+    </form>
+</div>
+{% endblock %}
